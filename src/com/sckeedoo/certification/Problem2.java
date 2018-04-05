@@ -13,16 +13,14 @@ public class Problem2 {
         Player[] players = new Player[5];
         int maxPoints = 0;
         int numberOfWinners = 0;
-        //create a Player object, we will use it to save results
-        //Player winner = new Player();
-        
+      
         
         // Adding John
         players[0] = new Player();
         players[0].name = "John";
         players[0].age = 17;
         //players[0].points = 200;
-        players[0].points = 290;
+        players[0].points = 270;
 
         // Adding Steven
         players[1] = new Player();
@@ -34,7 +32,7 @@ public class Problem2 {
         players[2] = new Player();
         players[2].name = "Maria";
         players[2].age = 16;
-        players[2].points = 270;
+        players[2].points = 250;
 
         // Adding Anna
         players[3] = new Player();
@@ -46,7 +44,7 @@ public class Problem2 {
         players[4] = new Player();
         players[4].name = "Igor";
         players[4].age = 19;
-        players[4].points = 290;
+        players[4].points = 270;
 
         /**
          * Print the winner's name and age. More points the better.

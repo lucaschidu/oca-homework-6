@@ -11,6 +11,9 @@ public class Problem3 {
 
     public static void main(String[] args) {
         Player[] players = new Player[5];
+        int sumPoints = 0;
+        double avgPoints = 0;
+        
 
         // Adding Mickey
         players[0] = new Player();
@@ -45,5 +48,14 @@ public class Problem3 {
         /**
          * Print the sum and the average points of all players.
          */
+        
+        //going through array to sum points
+        for (Player player:players){
+            sumPoints += player.points;
+        }
+        avgPoints = sumPoints;
+        //Printing results
+        
+        System.out.println("Total points = " + sumPoints + ", average points = " + (avgPoints /= players.length));
     }
 }

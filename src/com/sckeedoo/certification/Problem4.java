@@ -7,9 +7,8 @@ public class Problem4 {
         int age;
         int points;
         
-        //nethod 
-        public void introduceYourself (){
-            System.out.println("Hello, my name is " + name);
+        public void introduceYourself(){
+            System.out.println("Hello! My name is " + name+"!");
         }
     }
 

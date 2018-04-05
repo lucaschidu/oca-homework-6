@@ -1,4 +1,5 @@
-package com.sckeedoo.certification;
+﻿package com.sckeedoo.certification;
+
 import java.util.Random;
 
 public class Problem5 {
@@ -7,10 +8,15 @@ public class Problem5 {
         String name;
         int age;
         int points;
+        int pointsIncrementedBy;
         
-        //method to prinf points
+        //method to print points
         public void printPoints(){
-            System.out.println(name + " has " + points + " points.");
+        	String textToPrint = name + " has " + points + " points."; 
+            if (pointsIncrementedBy != 0) {
+            	textToPrint +=" Points incremented by " + pointsIncrementedBy+".";
+            }
+            System.out.println(textToPrint);
         }
     }
 
@@ -60,7 +66,8 @@ public class Problem5 {
         }
         
         for(Player player: players) {
-            player.points += random.nextInt(10)+10;
+        	player.pointsIncrementedBy = random.nextInt(10)+10;
+        	player.points += player.pointsIncrementedBy;
         }
         
         System.out.println("Printing values after increment!");

@@ -1,4 +1,4 @@
-package com.sckeedoo.certification;
+﻿package com.sckeedoo.certification;
 
 public class Problem2 {
 
@@ -11,12 +11,16 @@ public class Problem2 {
 
     public static void main(String[] args) {
         Player[] players = new Player[5];
-
+        int maxPoints = 0;
+        int numberOfWinners = 0;
+      
+        
         // Adding John
         players[0] = new Player();
         players[0].name = "John";
         players[0].age = 17;
-        players[0].points = 200;
+        //players[0].points = 200;
+        players[0].points = 270;
 
         // Adding Steven
         players[1] = new Player();
@@ -45,5 +49,40 @@ public class Problem2 {
         /**
          * Print the winner's name and age. More points the better.
          */
+        
+         //going through array using foreach to find the best result
+         //there can be more than 1, so we are looking for this condition too
+        for (Player player:players)
+        {
+            if (player.points > maxPoints){
+            maxPoints = player.points;
+            numberOfWinners = 1;
+            }
+            else if (player.points == maxPoints){
+             numberOfWinners++;
+            }
+        }
+        
+        //create new array to populate with winner(s), array lenght is equal to numberOfWinners
+        Player[] winners = new Player[numberOfWinners];
+        
+        //reset numberOfWinners, don't need it anymore for previous purpose
+        numberOfWinners = 0;
+        
+        //going through array "player" to extarct winners and populate array "winners"
+        for (Player player:players)
+        {
+            if (player.points == maxPoints){
+            winners[numberOfWinners] = new Player();
+            winners[numberOfWinners] = player;
+            numberOfWinners++;
+            }
+        }
+        
+        //Printing results
+        for (Player winner:winners)
+        {
+            System.out.println("The winner is "+winner.name+", " + winner.age + " years old, having "+ winner.points+" points.");
+        }
     }
 }

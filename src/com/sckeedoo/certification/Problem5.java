@@ -1,17 +1,25 @@
 package com.sckeedoo.certification;
 
+import java.util.Random;
 public class Problem5 {
 
     static class Player {
         String name;
         int age;
         int points;
+        
+        //method to prinf points
+        public void printPoints(){
+            System.out.println(name + " has " + points + " points.");
+        }
     }
 
 
     public static void main(String[] args) {
         Player[] players = new Player[5];
 
+        Random random = new Random();
+        
         // Adding Diana
         players[0] = new Player();
         players[0].name = "Diana";
@@ -45,7 +53,19 @@ public class Problem5 {
         /**
          * Increment the player's score by a random number between 10 and 20
          */
+        //Printing values before
+        System.out.println("Printing values before increment!");
         for(Player player: players) {
+            player.printPoints();
+        }
+        
+        for(Player player: players) {
+            player.points += random.nextInt(10)+10;
+        }
+        
+        System.out.println("Printing values after increment!");
+        for(Player player: players) {
+            player.printPoints();
         }
     }
 }

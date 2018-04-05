@@ -6,6 +6,11 @@ public class Problem4 {
         String name;
         int age;
         int points;
+        
+        //nethod 
+        public void introduceYourself (){
+            System.out.println("Hello, my name is " + name);
+        }
     }
 
 
@@ -47,6 +52,7 @@ public class Problem4 {
          */
 
         for(Player player: players) {
+            player.introduceYourself();
         }
     }
 }

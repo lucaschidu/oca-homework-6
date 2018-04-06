@@ -11,8 +11,7 @@ public class Problem2 {
 
     public static void main(String[] args) {
         Player[] players = new Player[5];
-        int maxPoints = 0;
-      
+        int maxPoints = 0;      
         
         // Adding John
         players[0] = new Player();

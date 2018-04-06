@@ -6,6 +6,16 @@ public class Problem1 {
         String name;
         int numberOfLegs;
         double weight;
+
+        public Animal(String name, int numberOfLegs, double weight){
+            this.name = name;
+            this.numberOfLegs = numberOfLegs;
+            this.weight = weight;
+        }
+
+        public String toString(){
+            return "name = " + this.name + ", numberOfLegs = " + this.numberOfLegs + ", weight = " + this.weight;
+        }
     }
 
     /**
@@ -14,6 +24,8 @@ public class Problem1 {
      *
      */
     public static void main(String[] args) {
-
+        Animal[] animal = new Animal[1];
+        animal[0] = new Animal("Mickey", 4, 3.4);
+        System.out.println(animal[0].toString());
     }
 }

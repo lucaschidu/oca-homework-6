@@ -1,5 +1,9 @@
 package com.sckeedoo.certification;
 
+import java.util.Iterator;
+import java.lang.Math;
+
+
 public class Main {
 
     public static void main(String[] args) {
@@ -14,6 +18,40 @@ public class Main {
 
         System.out.println("\r\nPlayers from Problem 4 introduce themselves: ");
         getPlayersProblem4().printPlayers();
+
+        System.out.println("\r\nFor Problem 5 we have new Points");
+        Iterator<Players.Player> iterator = getPlayersProblem5().iterator();
+
+        while (iterator.hasNext()) {
+            //Increment the player's score by a random number between 10 and 20
+            Players.Player player = iterator.next();
+
+            StringBuilder output = new StringBuilder("For player " + player.getName() + ". ");
+            output.append("Old score: " + player.getPoints() + ' ');
+
+            int newscore = (int) (player.getPoints() + Math.random() * 10 + 10);
+            player.setPoints(newscore);
+            output.append("New Score " + newscore);
+
+            System.out.println(output);
+        }
+
+
+        Players pBonus = getBonusProblem();
+        System.out.println("\r\nOriginal player list for Bonus problem");
+        pBonus.printAll();
+
+        System.out.println("\r\nSorting by NAME:");
+        pBonus.sort(SortBy.NAME);
+        pBonus.printAll();
+
+        System.out.println("\r\nSorting by AGE:");
+        pBonus.sort(SortBy.AGE);
+        pBonus.printAll();
+
+        System.out.println("\r\nSorting by POINTS:");
+        pBonus.sort(SortBy.POINTS);
+        pBonus.printAll();
 
 
     }
@@ -58,7 +96,19 @@ public class Main {
         return p;
     }
 
+    public static Players getBonusProblem() {
+        Players p = new Players();
+        p.add("Duke", 17, 200);
+        p.add("Steven", 14, 150);
+        p.add("John", 16, 250);
+        p.add("Joe", 15, 180);
+        p.add("Anna", 19, 270);
+        return p;
+    }
+
     /**
-     * Increment the player's score by a random number between 10 and 20
-     */
+     * Sort the array of playerList in increasing order.
+     * Array should be sort in 3 different ways : by name, by age and by points */
+
+
 }

@@ -12,7 +12,6 @@ public class Problem2 {
     public static void main(String[] args) {
         Player[] players = new Player[5];
         int maxPoints = 0;
-        int numberOfWinners = 0;
       
         
         // Adding John
@@ -56,33 +55,15 @@ public class Problem2 {
         {
             if (player.points > maxPoints){
             maxPoints = player.points;
-            numberOfWinners = 1;
-            }
-            else if (player.points == maxPoints){
-             numberOfWinners++;
-            }
-        }
-        
-        //create new array to populate with winner(s), array lenght is equal to numberOfWinners
-        Player[] winners = new Player[numberOfWinners];
-        
-        //reset numberOfWinners, don't need it anymore for previous purpose
-        numberOfWinners = 0;
-        
-        //going through array "player" to extarct winners and populate array "winners"
-        for (Player player:players)
-        {
-            if (player.points == maxPoints){
-            winners[numberOfWinners] = new Player();
-            winners[numberOfWinners] = player;
-            numberOfWinners++;
             }
         }
         
         //Printing results
-        for (Player winner:winners)
+        for (Player player:players)
         {
-            System.out.println("The winner is "+winner.name+", " + winner.age + " years old, having "+ winner.points+" points.");
+        	if(player.points ==maxPoints) {
+        		System.out.println("The winner is "+player.name+", " + player.age + " years old, having "+ player.points+" points.");
+        	}
         }
     }
 }

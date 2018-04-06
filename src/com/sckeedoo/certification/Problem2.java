@@ -1,4 +1,4 @@
-package com.sckeedoo.certification;
+﻿package com.sckeedoo.certification;
 
 public class Problem2 {
 
@@ -11,12 +11,14 @@ public class Problem2 {
 
     public static void main(String[] args) {
         Player[] players = new Player[5];
-
+        int maxPoints = 0;      
+        
         // Adding John
         players[0] = new Player();
         players[0].name = "John";
         players[0].age = 17;
-        players[0].points = 200;
+        //players[0].points = 200;
+        players[0].points = 270;
 
         // Adding Steven
         players[1] = new Player();
@@ -45,5 +47,22 @@ public class Problem2 {
         /**
          * Print the winner's name and age. More points the better.
          */
+        
+         //going through array using foreach to find the best result
+         //there can be more than 1, so we are looking for this condition too
+        for (Player player:players)
+        {
+            if (player.points > maxPoints){
+            maxPoints = player.points;
+            }
+        }
+        
+        //Printing results
+        for (Player player:players)
+        {
+        	if(player.points ==maxPoints) {
+        		System.out.println("The winner is "+player.name+", " + player.age + " years old, having "+ player.points+" points.");
+        	}
+        }
     }
 }

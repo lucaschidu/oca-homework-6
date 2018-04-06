@@ -43,7 +43,7 @@ public class BonusProblem {
         players[4].points = 270;
 
         /**
-         * Sort the array of players in increasing order.
+         * Sort the array of playerList in increasing order.
          * Array should be sort in 3 different ways : by name, by age and by points
          */
 

@@ -1,8 +1,5 @@
 package com.sckeedoo.certification;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class Problem3 {
 
     static class Player {
@@ -10,22 +7,11 @@ public class Problem3 {
         int age;
         int points;
         int sum;
-        int len;
 
         public Player(String name, int age, int points){
             this.name = name;
             this.age = age;
             this.points = points;
-            this.sum += points;
-            this.len++;
-        }
-
-        public int displaySum(){
-            return this.sum;
-        }
-        
-        public double displayAvg(){
-            return sum / len;
         }
     }
 
@@ -51,6 +37,11 @@ public class Problem3 {
         /**
          * Print the sum and the average points of all players.
          */
-        s
+        int sum = 0;
+        for(Player player : players){
+            sum += player.points;
+        }
+        System.out.println("sum = " + sum);
+        System.out.println("average point is " + sum / (players.length ));
     }
 }
